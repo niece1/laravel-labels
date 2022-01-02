@@ -1,10 +1,10 @@
 <?php
 
-namespace Niece1\Credit;
+namespace Niece1\Labels;
 
 use Illuminate\Support\ServiceProvider;
 
-class CreditServiceProvider extends ServiceProvider
+class LabelsServiceProvider extends ServiceProvider
 {
     /**
      * Register services.

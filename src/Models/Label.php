@@ -1,11 +1,11 @@
 <?php
 
-namespace Niece1\Credit\Models;
+namespace Niece1\Labels\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Label extends Model
 {
     use HasFactory;
 }

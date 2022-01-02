@@ -1,5 +1,5 @@
 {
-    "name": "niece1/credit",
+    "name": "niece1/labels",
     "authors": [
         {
             "name": "Volodymyr Zhonchuk",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Niece1\\Credit\\": "src"
+            "Niece1\\Labels\\": "src"
         }
     }
 }

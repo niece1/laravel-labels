@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaggablesTable extends Migration
+class CreateLabelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTaggablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('taggables', function (Blueprint $table) {
+        Schema::create('labels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tag_id');
-            $table->integer('taggable_id');
-            $table->string('taggable_type');
+            $table->string('title');
+            $table->string('slug')->index();
+            $table->integer('count')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateTaggablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('taggables');
+        Schema::dropIfExists('labels');
     }
 }
