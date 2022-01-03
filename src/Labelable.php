@@ -4,6 +4,7 @@ namespace Niece1\Labels;
 
 use Niece1\Labels\Models\Label;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -62,8 +63,8 @@ trait Labelable
     {
         $sync = $this->labels()->syncWithoutDetaching($labels->pluck('id')->toArray());
         // we use syncWithoutDetaching() instead of attach() because we need following functionality
-        foreach (array_get($sync, 'attached') as $attachedId) {
-            $labels->where('id', $attachedId)->first()->increment();
+        foreach (Arr::get($sync, 'attached') as $attachedId) {
+            $labels->where('id', $attachedId)->first()->increment('count');
         }
     }
     

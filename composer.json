@@ -11,9 +11,20 @@
         "illuminate/database": ">=8.0",
         "illuminate/support": ">=8.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "~6.0",
+        "phpunit/phpunit": "^9.5.10"
+    },
     "autoload": {
         "psr-4": {
             "Niece1\\Labels\\": "src"
         }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/Models/Book.php",
+            "tests/Models/Label.php"
+        ]
     }
 }
