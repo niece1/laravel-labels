@@ -31,7 +31,7 @@ trait Labelable
     
     public function unlabel($labels = null)
     {
-        if ($labels = null) {
+        if ($labels === null) {
             $this->removeAllLabels();
             return;
         }
@@ -82,10 +82,10 @@ trait Labelable
     
     private function getLabelModels(array $labels)
     {
-        return Label::whereIn('slug', $this->normaliseLabelNames($labels))->get();
+        return Label::whereIn('slug', $this->rationLabelNames($labels))->get();
     }
     
-    private function normaliseLabelNames(array $labels)
+    private function rationLabelNames(array $labels)
     {
         return array_map(function ($label) {
             return Str::slug($label);
