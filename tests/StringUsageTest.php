@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
  *
  * @author test
  */
-class LabelsStringUsageTest extends TestCase
+class StringUsageTest extends TestCase
 {
     protected $book;
     
