@@ -11,10 +11,8 @@ use Niece1\Labels\Labelable;
 class Book extends Model
 {
     use Labelable;
-    
+
     protected $connection = 'sqlite';
-    
+
     public $table = 'books';
-    
-    
 }
